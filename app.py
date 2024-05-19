@@ -3,6 +3,11 @@ from flask import Flask, jsonify
 import gdown
 app = Flask(__name__)
 
+# Ignore favicon requests
+@app.route('/favicon.ico')
+def favicon():
+    return '', 404
+
 @app.route('/run-colab')
 def run_colab():
     gdown.download('https://drive.google.com/file/d/1iGLQAtupTFPTPhtdWVg3Q5ECR7gR1cYY', 'colab.ipynb', quiet=False)
