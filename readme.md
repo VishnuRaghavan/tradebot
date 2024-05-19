@@ -1,0 +1,1 @@
+project deploys flask app on vercel platform.
