@@ -11,7 +11,8 @@ def server_running():
 
 @app.route('/run-colab')
 def run_colab():
-    gdown.download('https://drive.google.com/file/d/1iGLQAtupTFPTPhtdWVg3Q5ECR7gR1cYY', 'colab.ipynb', quiet=False)
+    file_id = "1iGLQAtupTFPTPhtdWVg3Q5ECR7gR1cYY"
+    gdown.download(f'https://drive.google.com/uc?id={file_id}', 'colab.ipynb', quiet=False)
     return jsonify(message='colab notebook ran successfully')
 
 # Ignore favicon requests
